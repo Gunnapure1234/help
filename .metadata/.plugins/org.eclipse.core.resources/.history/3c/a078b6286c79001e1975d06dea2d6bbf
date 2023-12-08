@@ -1,0 +1,119 @@
+package com.sunbeam;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		ArrayList <Book> Bookstore=new ArrayList<Book>();
+//		ArrayList  bookstore1 =new ArrayList();
+//		 bookstore1.iterator();
+		Scanner sc=new Scanner(System.in);
+		int choice;
+
+		do
+		{
+			System.out.println("\n1.Add a new book in list");
+			System.out.println("\n2.Display all books in forward order");
+			System.out.println("\n3.Delete book of given order"); 
+			System.out.println("\n4.Check if book with given isbn is in list or not");
+			System.out.println("\n5.Delete all books in list");
+			System.out.println("\n6.Display number of books in list");
+			System.out.println("\n7.Quit");
+			System.out.println("Enter your choice:");
+			choice=sc.nextInt();
+			
+			switch(choice)
+			{
+			case 1:
+			{
+				
+				Book b=new Book();
+				b.accept();
+				Bookstore.add(b);
+				System.out.println("Books added in the store!!");
+				break;
+			}
+			case 2:
+				if(Bookstore.isEmpty())
+				{
+					System.out.println("Book store is empty");
+				}
+				else
+				{
+					System.out.println("Books in the library");
+					for(Book book:Bookstore)
+					{
+						System.out.println(book);
+					}
+				}
+				break;
+				
+			case 3:
+				System.out.println("Enter the ISBN to delete-");
+				String isbnd=sc.next();
+				Iterator<Book> itr=Bookstore.iterator();
+				while(itr.hasNext())
+				{
+					if(itr.next().getIsbn().equals(isbnd))
+					{
+						
+						itr.remove();
+					}
+				}
+				System.out.println("Book deleted!!");
+				break;
+				
+			case 4://Check if book with given isbn is in list or not
+				System.out.println("Enter the isbn to find the book in store");
+				String isbnf=sc.next();
+				Iterator<Book> itrf=Bookstore.iterator();
+				while(itrf.hasNext())
+				{
+					if(itrf.next().getIsbn().equals(isbnf))
+					{
+					System.out.println("Book found");
+					}
+					else {
+						System.out.println("Book not found");
+					}
+				}
+				break;
+				
+//				System.out.println("enter isbn number");
+//				String key = new Scanner(System.in).next(); 
+//				Book b3 = new Book();
+//				b3.setIsbn(key);
+//				if(book.contains(b3))
+//					System.out.println("Book exist");
+//				else
+//					System.out.println("Book is not exist");
+//				break;
+				
+			case 5:
+				Bookstore.clear();
+				System.out.println("All books are sold out!!");
+				break;
+				
+			case 6:
+				System.out.println("Number of books in store-"+Bookstore.size());
+				break;
+				
+			case 7:
+				break;
+				
+			default:
+				System.out.println("Invalid choice!!!");
+				break;
+			}
+			
+		} while(choice !=7);
+		
+		
+		
+
+	}
+
+}

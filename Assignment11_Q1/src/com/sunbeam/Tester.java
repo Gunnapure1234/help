@@ -1,0 +1,36 @@
+package com.sunbeam;
+
+import java.util.Arrays;
+public class Tester {
+
+	public static void main(String[] args) {
+	
+		Double[] arrd= {10.11,3.44,66.7,88.8,9.9,1.1};
+		
+		
+		System.out.println("Array before sorting-");
+		System.out.println(Arrays.toString(arrd));
+		
+		System.out.println("Array after sorting-");
+		
+		Genericsortmethod.selectionSort(arrd,new Doublecomparator());
+		System.out.println(Arrays.toString(arrd));
+		
+		
+		System.out.println("--------------------------");
+		
+		Integer[] arri= {22,9,32,66,77,88,3};
+		
+		System.out.println("Array before sorting-");
+		System.out.println(Arrays.toString(arri));
+		
+		System.out.println("Arrays after sorting-");
+		Genericsortmethod.selectionSort(arri, new Integercomparator());
+		
+		System.out.println(Arrays.toString(arri));
+		
+		
+
+	
+	}
+}

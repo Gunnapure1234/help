@@ -1,0 +1,22 @@
+package com.sunbeam;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Tester {
+
+	public static void main(String[] args) {
+	
+		Double[] arrd= {10.11,3.44,66.7,88.8,9.9,1.1};
+		
+		System.out.println("Array before sorting-");
+		for(Double d:arrd)
+			System.out.println(d);
+		
+		Genericsortmethod.selectionSort(arrd,new Doublecomparator());
+		
+		
+
+	}
+
+}

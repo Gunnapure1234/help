@@ -1,0 +1,44 @@
+package com.sunbeam;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+//Use Arrays.sort() to sort array of Students using Comparator. 
+//The 1st level sorting should be on city (desc), 
+//2nd level sorting should be on marks (desc),
+//3rd level sorting should be on name (asc).
+public class Tester {
+
+	public static void main(String[] args) {
+		
+		student arr[]= {
+						new student(1,"Renu","Pune",100),
+						new student(4,"Omkar","Satara",200),
+						new student(5,"Shlok","Pune",300),
+						new student(6,"Sam","Mumbai",400),
+						new student(2,"Ram","Mumbai",400)
+				
+		};
+		
+		class tosort implements Comparator<student>
+		{
+
+			@Override
+			public int compare(student s1, student s2) {
+			int diff=-s1.getCity().compareTo(s2.getCity());
+			if(diff==0)
+				diff=-Double.compare(s1.getMarks(), s2.getMarks());
+			if(diff==0)
+				diff=s1.getName().compareTo(s2.getName());
+				return diff;
+			}
+			
+		}
+		
+		Arrays.sort(arr,new tosort());
+		System.out.println(Arrays.toString(arr));
+		
+		
+	}
+
+}

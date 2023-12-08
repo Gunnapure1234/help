@@ -1,0 +1,88 @@
+package com.sunbeam;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		ArrayList <Book> Bookstore=new ArrayList<Book>();
+		Scanner sc=new Scanner(System.in);
+		int choice;
+
+		do
+		{
+			System.out.println("\n1.Add a new book in list");
+			System.out.println("\n2.Display all books in forward order");
+			System.out.println("\n3.Delete book of given order"); 
+			System.out.println("\n4.Check if book with given isbn is in list or not");
+			System.out.println("\n5.Delete all books in list");
+			System.out.println("\n6.Display number of books in list");
+			System.out.println("\n7.Quit");
+			System.out.println("Enter your choice:");
+			choice=sc.nextInt();
+			
+			switch(choice)
+			{
+			case 1:
+			{
+				Book b=new Book();
+				b.accept();
+				Bookstore.add(b);
+				System.out.println("Books added in the store!!");
+				break;
+			}
+			case 2:
+				if(Bookstore.isEmpty())
+				{
+					System.out.println("Book store is empty");
+				}
+				else
+				{
+					System.out.println("Books in the library");
+					for(Book book:Bookstore)
+					{
+						System.out.println(book);
+					}
+				}
+				break;
+				
+			case 3:
+				System.out.println("Enter the ISBN to delete-");
+				String isbntodelete=sc.next();
+				for(int i=0;i<Bookstore.size();i++)
+				{
+					if(Bookstore.get(i).equals(isbntodelete))
+					{
+						Bookstore.remove(i);
+					}
+					System.out.println("Book deleted!");
+					break;
+				}
+				break;
+				
+			case 4:
+				break;
+				
+			case 5:
+				break;
+				
+			case 6:
+				break;
+				
+			case 7:
+				break;
+				
+			default:
+				System.out.println("Invalid choice!!!");
+				break;
+			}
+			
+		} while(choice !=7);
+		
+		
+		
+
+	}
+
+}

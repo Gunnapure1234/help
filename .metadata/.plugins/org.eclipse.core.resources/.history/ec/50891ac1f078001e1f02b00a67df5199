@@ -1,0 +1,21 @@
+package com.sunbeam;
+
+//Use Arrays.sort() to sort array of Students using Comparator. 
+//The 1st level sorting should be on city (desc), 
+//2nd level sorting should be on marks (desc),
+//3rd level sorting should be on name (asc).
+public class Tester {
+
+	public static void main(String[] args) {
+		
+		student arr[]= {new student(1,"Renu","Pune",388),
+						new student(3,"Ashwini","Kolhapur",250),
+						new student(6,"Chaitanya","Loni",388),
+						new student(8,"Shlok","Pune",250),
+						new student(9,"Shrutika","Kolhapur",250)
+						};
+		
+		
+	}
+
+}
